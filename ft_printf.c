@@ -6,30 +6,19 @@
 /*   By: amoinier <amoinier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:24:51 by amoinier          #+#    #+#             */
-/*   Updated: 2016/03/14 18:45:03 by amoinier         ###   ########.fr       */
+/*   Updated: 2016/03/14 19:47:38 by amoinier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
+#include <stdio.h>
 #include "libft.h"
-
-int		size_int(int nb)
-{
-	int	i;
-
-	i = 0;
-	while (nb > 0)
-	{
-		nb = nb / 10;
-		i++;
-	}
-	return (i);
-}
 
 int		ft_printf(const char *format, ...)
 {
 	int		i;
 	int		count;
+	void	*donne;
 	va_list	ap;
 
 	i = 0;
@@ -40,21 +29,26 @@ int		ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			donne = va_arg(ap, void *);
 			if (format[i] == 's')
 			{
-				ft_putstr((char *)va_arg(ap, char *));
-				count += ft_strlen((char *)va_arg(ap, char *));
+				ft_putstr((char *)donne);
+				count += ft_strlen((char *)donne);
 			}
 			else if (format[i] == 'c')
 			{
-				ft_putchar((char)va_arg(ap, int));
+				ft_putchar((char)donne);
 				count++;
 			}
 			else if (format[i] == 'd')
 			{
-				ft_putnbr((int)va_arg(ap, int));
-				count += size_int((int)va_arg(ap, int));
-				ft_putnbr(count);
+				ft_putnbr((int)donne);
+				count += ft_strlen(ft_itoa((int)donne));
+			}
+			else if (format[i] == 'o')
+			{
+				ft_putnbr((unsigned int)donne);
+				count += ft_strlen(ft_itoa((unsigned int)donne));
 			}
 		}
 		else
@@ -65,12 +59,14 @@ int		ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
-	ft_putchar('\n');
-	ft_putnbr(count);
 	return (count);
 }
 
 int		main(void)
 {
-	ft_printf("%d", 42);
+	ft_putchar('\n');
+	ft_putnbr(printf(" --- %o\n", -478));
+	ft_putchar('\n');
+	ft_putnbr(ft_printf(" +++ %o\n", 478));
+	ft_putchar('\n');
 }
