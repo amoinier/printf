@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amoinier <amoinier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 13:06:15 by amoinier          #+#    #+#             */
-/*   Updated: 2016/03/15 11:16:03 by amoinier         ###   ########.fr       */
+/*   Created: 2016/03/15 11:11:22 by amoinier          #+#    #+#             */
+/*   Updated: 2016/03/15 11:20:26 by amoinier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef PRINTF_H
+# define PRINTF_H
 
-char	*ft_strdup(const char *s1)
-{
-	int		i;
-	char	*dst;
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-	i = 0;
-	if (!(dst = (char *)malloc(sizeof(*dst) * (ft_strlen(s1) + 1))))
-		return (NULL);
-	while (s1[i])
-	{
-		dst[i] = s1[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
-}
+char			*ft_itoa(int n);
+void			ft_putchar(char c);
+void			ft_putstr(char const *s);
+void			ft_putnbr(int n);
+int				ft_power(int nb, int power);
+int				ft_atoi(char *s);
+size_t			ft_strlen(const char *s);
+char			*ft_strdup(const char *s1);
+
+char			*ft_itoa_base(unsigned int nb, int nbase);
+
+#endif

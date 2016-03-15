@@ -6,11 +6,11 @@
 /*   By: amoinier <amoinier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 15:52:46 by amoinier          #+#    #+#             */
-/*   Updated: 2016/01/27 15:21:24 by amoinier         ###   ########.fr       */
+/*   Updated: 2016/03/15 11:15:40 by amoinier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
 static	int		ft_val(int n)
 {

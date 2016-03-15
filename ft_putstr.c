@@ -6,11 +6,11 @@
 /*   By: amoinier <amoinier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:11:15 by amoinier          #+#    #+#             */
-/*   Updated: 2016/03/14 17:46:51 by amoinier         ###   ########.fr       */
+/*   Updated: 2016/03/15 11:15:59 by amoinier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
 void	ft_putstr(char const *s)
 {

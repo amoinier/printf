@@ -6,13 +6,12 @@
 /*   By: amoinier <amoinier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:24:51 by amoinier          #+#    #+#             */
-/*   Updated: 2016/03/14 19:47:38 by amoinier         ###   ########.fr       */
+/*   Updated: 2016/03/15 12:36:01 by amoinier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
 #include <stdio.h>
-#include "libft.h"
+#include "printf.h"
 
 int		ft_printf(const char *format, ...)
 {
@@ -23,6 +22,7 @@ int		ft_printf(const char *format, ...)
 
 	i = 0;
 	count = 0;
+
 	va_start(ap, format);
 	while (format[i])
 	{
@@ -47,8 +47,13 @@ int		ft_printf(const char *format, ...)
 			}
 			else if (format[i] == 'o')
 			{
-				ft_putnbr((unsigned int)donne);
-				count += ft_strlen(ft_itoa((unsigned int)donne));
+				ft_putstr(ft_itoa_base((unsigned int)donne, 8));
+				count += ft_strlen(ft_itoa_base((unsigned int)donne, 8));
+			}
+			else if (format[i] == 'x')
+			{
+				ft_putstr(ft_itoa_base((unsigned int)donne, 16));
+				count += ft_strlen(ft_itoa_base((unsigned int)donne, 16));
 			}
 		}
 		else
@@ -62,11 +67,11 @@ int		ft_printf(const char *format, ...)
 	return (count);
 }
 
-int		main(void)
-{
-	ft_putchar('\n');
-	ft_putnbr(printf(" --- %o\n", -478));
-	ft_putchar('\n');
-	ft_putnbr(ft_printf(" +++ %o\n", 478));
-	ft_putchar('\n');
-}
+// int		main(void)
+// {
+// 	ft_putchar('\n');
+// 	ft_putnbr(printf(" --- %x\n", 64));
+// 	ft_putchar('\n');
+// 	ft_putnbr(ft_printf(" +++ %x\n", 64));
+// 	ft_putchar('\n');
+// }
