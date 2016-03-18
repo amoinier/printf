@@ -6,7 +6,7 @@
 #    By: amoinier <amoinier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 11:25:20 by amoinier          #+#    #+#              #
-#    Updated: 2016/03/16 15:56:15 by amoinier         ###   ########.fr        #
+#    Updated: 2016/03/18 12:07:08 by amoinier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ SRC =	ft_printf.c		\
 		flag_X.c		\
 		flag_D.c		\
 		flag_U.c		\
-		flag_O.c
+		flag_O.c		\
+		flag_X.c
 
 OFL = $(SRC:.c=.o)
 

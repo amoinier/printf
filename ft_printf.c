@@ -6,12 +6,13 @@
 /*   By: amoinier <amoinier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:24:51 by amoinier          #+#    #+#             */
-/*   Updated: 2016/03/16 16:13:42 by amoinier         ###   ########.fr       */
+/*   Updated: 2016/03/18 12:02:42 by amoinier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <limits.h>
+#include <locale.h>
 #include "printf.h"
 
 int		ft_printf(const char *format, ...)
@@ -56,8 +57,9 @@ int		ft_printf(const char *format, ...)
 
 int		main(void)
 {
-	ft_putnbr(ft_printf("%U\n", ULONG_MAX / 2));
+	setlocale (LC_ALL,"");
+	ft_putnbr(ft_printf("%S\n", L"salut"));
 	ft_putstr("\n");
-	ft_putnbr(printf("%U\n", ULONG_MAX / 2));
+	ft_putnbr(printf("%S\n", L"salut"));
 	ft_putchar('\n');
 }

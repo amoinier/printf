@@ -6,7 +6,7 @@
 /*   By: amoinier <amoinier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/15 11:11:22 by amoinier          #+#    #+#             */
-/*   Updated: 2016/03/16 16:08:24 by amoinier         ###   ########.fr       */
+/*   Updated: 2016/03/18 12:06:07 by amoinier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int				flag_D(void *donne, const char *format, int i, int count);
 int				flag_U(void *donne, const char *format, int i, int count);
 int				flag_O(void *donne, const char *format, int i, int count);
 int				flag_X(void *donne, const char *format, int i, int count);
+int				flag_S(void *donne, const char *format, int i, int count);
 
 #endif
